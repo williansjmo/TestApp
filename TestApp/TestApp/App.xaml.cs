@@ -13,8 +13,13 @@ namespace TestApp
 		{
 			InitializeComponent();
 
-			MainPage = new TestApp.MainPage();
-		}
+            //MainPage = new TestApp.MainPage();
+            MainPage = new MasterDetailPage()
+            {
+                Master = new MasterPage() { Title = "Main Page" },
+                Detail = new NavigationPage(new PageOne())
+            };
+        }
 
 		protected override void OnStart ()
 		{
